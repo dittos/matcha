@@ -1,0 +1,44 @@
+plugins {
+	id("org.springframework.boot") version "2.2.0.RC1" apply false
+	id("io.spring.dependency-management") version "1.0.8.RELEASE" apply false
+	id("org.jetbrains.kotlin.jvm") version "1.3.50" apply false
+	id("org.jetbrains.kotlin.kapt") version "1.3.50" apply false
+	id("org.jetbrains.kotlin.plugin.spring") version "1.3.50" apply false
+	id("org.jetbrains.kotlin.plugin.allopen") version "1.3.50" apply false
+	id("org.jetbrains.kotlin.plugin.jpa") version "1.3.50" apply false
+}
+
+subprojects {
+	apply(plugin: "org.springframework.boot")
+	apply(plugin: "io.spring.dependency-management")
+	apply(plugin: "kotlin")
+	apply(plugin: "kotlin-kapt")
+	apply(plugin: "org.jetbrains.kotlin.plugin.spring")
+	apply(plugin: "org.jetbrains.kotlin.plugin.allopen")
+	apply(plugin: "org.jetbrains.kotlin.plugin.jpa")
+
+	group = "org.sapzil.matcha"
+	version = "0.0.1-SNAPSHOT"
+	java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+	repositories {
+		mavenCentral()
+		maven { url = uri("https://repo.spring.io/milestone") }
+	}
+
+	test {
+		useJUnitPlatform()
+	}
+
+	compileKotlin {
+		kotlinOptions {
+			freeCompilerArgs = ["-Xjsr305=strict"]
+			jvmTarget = "1.8"
+		}
+	}
+
+	allOpen {
+		annotation 'javax.persistence.Entity'
+		annotation 'javax.persistence.Embeddable'
+	}
+}
