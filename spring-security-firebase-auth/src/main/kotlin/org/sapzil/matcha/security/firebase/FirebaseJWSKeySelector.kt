@@ -1,4 +1,4 @@
-package org.sapzil.matcha.collection.security
+package org.sapzil.matcha.security.firebase
 
 import com.google.api.client.googleapis.auth.oauth2.GooglePublicKeysManager
 import com.nimbusds.jose.JWSHeader
