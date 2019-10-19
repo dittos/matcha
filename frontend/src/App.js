@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import * as firebase from "firebase/app";
 import * as firebaseui from "firebaseui";
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-import Collection from './Collection';
+import Index from './routes/Index';
+import Media from './routes/Media';
+import Collection from './routes/Collection';
 
 var ui;
 
@@ -45,7 +48,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <BrowserRouter>
       {user ? (
         <div>
           Welcome! {user.email}
@@ -55,9 +58,19 @@ function App() {
         <button onClick={login}>Login</button>
       )}
 
-      {user &&
-        <Collection user={user} />}
-    </div>
+      <Switch>
+        <Route path="/media/:id">
+          <Media user={user} />
+        </Route>
+        <Route path="/collection">
+          {user &&
+            <Collection user={user} />}
+        </Route>
+        <Route path="/">
+          <Index />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
