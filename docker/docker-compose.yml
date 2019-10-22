@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=pw
+      - MYSQL_DATABASE=maxwell
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql-conf.d:/etc/mysql/conf.d
+
+  maxwell:
+    image: zendesk/maxwell
+    container_name: maxwell
+    command: bin/maxwell --user='root' --password='pw' --host='mysql' --producer=stdout
+    depends_on:
+      - mysql
+    restart: always
