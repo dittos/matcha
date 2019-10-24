@@ -2,3 +2,6 @@
 server_id=1
 log-bin=master
 binlog_format=row
+gtid-mode=ON
+log-slave-updates=ON
+enforce-gtid-consistency=true

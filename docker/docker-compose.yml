@@ -14,7 +14,7 @@ services:
   maxwell:
     image: zendesk/maxwell
     container_name: maxwell
-    command: bin/maxwell --user='root' --password='pw' --host='mysql' --producer=stdout
+    command: bin/maxwell --user='root' --password='pw' --host='mysql' --producer=stdout --gtid_mode=true --output_primary_keys=true --output_gtid_position=true
     depends_on:
       - mysql
     restart: always
