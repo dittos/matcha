@@ -13,8 +13,15 @@ services:
 
   maxwell:
     image: zendesk/maxwell
-    container_name: maxwell
-    command: bin/maxwell --user='root' --password='pw' --host='mysql' --producer=stdout --gtid_mode=true --output_primary_keys=true --output_gtid_position=true
+    command: bin/maxwell
+    volumes:
+      - ./maxwell/config.properties:/app/config.properties
     depends_on:
       - mysql
+      - redis
     restart: always
+
+  redis:
+    image: redis:5-alpine
+    ports:
+      - 6379:6379
