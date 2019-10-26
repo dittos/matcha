@@ -25,3 +25,11 @@ services:
     image: redis:5-alpine
     ports:
       - 6379:6379
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+      - 9300:9300
