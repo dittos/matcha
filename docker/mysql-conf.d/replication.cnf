@@ -5,3 +5,6 @@ binlog_format=row
 gtid-mode=ON
 log-slave-updates=ON
 enforce-gtid-consistency=true
+
+character_set_server=utf8mb4
+collation_server=utf8mb4_unicode_ci
