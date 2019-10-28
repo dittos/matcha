@@ -65,10 +65,10 @@ class MaxwellStreamProcessor(
 
                 try {
                     if (record.type == "delete") {
-                        es.client.delete(DeleteRequest(indexName, record.table, record.data["id"].toString()),
+                        es.client.delete(DeleteRequest(indexName, "_doc", record.data["id"].toString()),
                             RequestOptions.DEFAULT)
                     } else {
-                        es.client.index(IndexRequest(indexName, record.table, record.data["id"].toString())
+                        es.client.index(IndexRequest(indexName, "_doc", record.data["id"].toString())
                             .source(record.data)
                             .version(record.gtid.split(":").last().toLong())
                             .versionType(VersionType.EXTERNAL), RequestOptions.DEFAULT)

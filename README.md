@@ -29,3 +29,4 @@ MSA 연습 프로젝트. 왓챠와 유사한 사이트를 만들어볼 것이다
 1. `cd docker; docker-compose up`
 2. `docker exec -it docker_mysql_1 mysql -uroot -ppw`
     1. `create database matcha_collection;`
+3. `curl localhost:9200/matcha_collection_item -XPUT -d @review-app\src\main\resources\mapping_item.json -H "content-type:application/json"`

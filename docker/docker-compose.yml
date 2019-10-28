@@ -12,7 +12,7 @@ services:
       - ./mysql-conf.d:/etc/mysql/conf.d
 
   maxwell:
-    image: zendesk/maxwell
+    image: gcr.io/ditto-1470749749381/maxwell:9606af516f74092186eb0f3a842f92c209075b38
     command: bin/maxwell
     volumes:
       - ./maxwell/config.properties:/app/config.properties
