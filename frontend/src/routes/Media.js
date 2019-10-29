@@ -10,17 +10,13 @@ function Media({ user }) {
 
   useEffect(() => {
     async function load() {
-      const mediaP = fetch(`http://localhost:18002/media/${id}`).then(r => r.json());
-      const itemP = user.getIdToken().then(accessToken =>
-        fetch(`http://localhost:18001/users/${user.uid}/items:byMediaId/${id}`, {
-          mode: 'cors',
-          headers: {
-            'Authorization': 'Bearer ' + accessToken
-          }
-        })
-      ).then(r => r.json());
-      const media = await mediaP;
-      const item = await itemP;
+      const accessToken = user ? await user.getIdToken() : null;
+      const { media, item } = await fetch(`http://localhost:18000/media/${id}`, {
+        mode: 'cors',
+        headers: accessToken ? {
+          'Authorization': 'Bearer ' + accessToken
+        } : {},
+      }).then(r => r.json());
       setMedia(media);
       setItem(item);
     }
