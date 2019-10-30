@@ -62,7 +62,8 @@ class MediaController {
     data class Media(
         val id: String,
         val name: String,
-        val image: String?
+        val image: String?,
+        val imageBlurhash: String?
     )
 
     data class Item(

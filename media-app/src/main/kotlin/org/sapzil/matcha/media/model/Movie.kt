@@ -5,5 +5,7 @@ class Movie(
 
     override val name: String,
 
-    override val image: String?
+    override val image: String?,
+
+    override val imageBlurhash: String?
 ) : Media

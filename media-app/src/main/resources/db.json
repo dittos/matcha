@@ -3,18 +3,21 @@
     "@class": "org.sapzil.matcha.media.model.Movie",
     "id": "m1",
     "name": "펀치 드렁크 러브",
-    "image": "https://m.media-amazon.com/images/M/MV5BYmE1OTY4NjgtYjcwNC00NWE4LWJiNGMtZmVhYTdlMWE1YzIxXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+    "image": "https://m.media-amazon.com/images/M/MV5BYmE1OTY4NjgtYjcwNC00NWE4LWJiNGMtZmVhYTdlMWE1YzIxXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    "imageBlurhash": "L76R=akC00WAk?kCR3ax4Taf.TkC"
   },
   {
     "@class": "org.sapzil.matcha.media.model.Movie",
     "id": "m2",
     "name": "매그놀리아",
-    "image": "https://m.media-amazon.com/images/M/MV5BZjk3YThkNDktNjZjMS00MTBiLTllNTAtYzkzMTU0N2QwYjJjXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+    "image": "https://m.media-amazon.com/images/M/MV5BZjk3YThkNDktNjZjMS00MTBiLTllNTAtYzkzMTU0N2QwYjJjXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    "imageBlurhash": "LsLfmxRjIoW=~AWAjYa}EPa{t6ay"
   },
   {
     "@class": "org.sapzil.matcha.media.model.Movie",
     "id": "m3",
     "name": "나를 찾아줘",
-    "image": "https://m.media-amazon.com/images/M/MV5BMTk0MDQ3MzAzOV5BMl5BanBnXkFtZTgwNzU1NzE3MjE@._V1_.jpg"
+    "image": "https://m.media-amazon.com/images/M/MV5BMTk0MDQ3MzAzOV5BMl5BanBnXkFtZTgwNzU1NzE3MjE@._V1_.jpg",
+    "imageBlurhash": "L7JIFV4o_4-p00xssmNH~D-o?GRj"
   }
 ]
