@@ -27,9 +27,13 @@ class MediaController {
         }
         val item = if (userId != null) {
             async {
-                webClient.get().uri("http://localhost:18001/users/$userId/items:byMediaId/$mediaId")
-                    .header("authorization", "Bearer ${jwt.tokenValue}")
-                    .awaitExchange().awaitBody<Item>()
+                try {
+                    webClient.get().uri("http://localhost:18001/users/$userId/items:byMediaId/$mediaId")
+                        .header("authorization", "Bearer ${jwt.tokenValue}")
+                        .awaitExchange().awaitBody<Item>()
+                } catch (e: NullPointerException) {
+                    null
+                }
             }
         } else {
             null

@@ -49,14 +49,16 @@ function App() {
 
   return (
     <BrowserRouter>
-      {user ? (
-        <div>
-          Welcome! {user.email}
-          <button onClick={logout}>Logout</button>
-        </div>
-      ) : (
-        <button onClick={login}>Login</button>
-      )}
+      <div style={{ position: 'absolute', right: 0, padding: '20px' }}>
+        {user ? (
+          <div>
+            Welcome! {user.email}
+            <button onClick={logout}>Logout</button>
+          </div>
+        ) : (
+          <button onClick={login}>Login</button>
+        )}
+      </div>
 
       <Switch>
         <Route path="/media/:id">

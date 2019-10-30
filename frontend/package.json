@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@blueprintjs/core": "^3.19.1",
+    "@blueprintjs/select": "^3.11.1",
     "firebase": "^7.1.0",
     "firebaseui": "^4.2.0",
     "react": "^16.10.2",
