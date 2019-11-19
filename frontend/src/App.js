@@ -49,7 +49,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div style={{ position: 'absolute', right: 0, padding: '20px' }}>
+      <div style={{ position: 'absolute', right: 0, padding: '20px', zIndex: 10, color: '#fff' }}>
         {user ? (
           <div>
             Welcome! {user.email}

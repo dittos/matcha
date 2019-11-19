@@ -57,7 +57,7 @@ function Media({ user }) {
     <div>
       <div style={{ position: 'relative' }}>
         {media.imageBlurhash &&
-          <Blurhash hash={media.imageBlurhash} width="100%" height="40vh" punch={1} />}
+          <Blurhash hash={media.imageBlurhash} width="100%" height="200px" punch={1} />}
         <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, right: 0 }}>
           <h1 style={{
             margin: '0 auto',
@@ -66,7 +66,7 @@ function Media({ user }) {
             fontSize: '24px',
             position: 'absolute',
             left: '20px',
-            top: '10px',
+            top: '13px',
           }}>
             <Link to="/" style={{color: '#fff'}}>Matcha</Link>
           </h1>
