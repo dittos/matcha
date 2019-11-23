@@ -26,6 +26,12 @@ subprojects {
 		maven { url = uri("https://repo.spring.io/milestone") }
 	}
 
+	dependencyManagement {
+		imports {
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:Hoxton.RC2"
+		}
+	}
+
 	test {
 		useJUnitPlatform()
 	}
