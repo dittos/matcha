@@ -35,10 +35,16 @@ function logout() {
 
 function App() {
   const [user, setUser] = useState('loading');
+  const [profile, setProfile] = useState('loading');
 
   useEffect(() => {
-    const unsubscribe = firebase.auth().onAuthStateChanged(function(user) {
+    const unsubscribe = firebase.auth().onAuthStateChanged(async function(user) {
       setUser(user);
+
+      const profile = await fetch(`http://localhost:18004/users/${user.uid}/profile`, {
+        mode: 'cors',
+      }).then(r => r.json());
+      setProfile(profile);
     });
     return unsubscribe;
   }, []);
@@ -52,7 +58,7 @@ function App() {
       <div style={{ position: 'absolute', right: 0, padding: '20px', zIndex: 10, color: '#fff' }}>
         {user ? (
           <div>
-            Welcome! {user.email}
+            Welcome! {profile ? profile.nickname : ''}
             <button onClick={logout}>Logout</button>
           </div>
         ) : (

@@ -13,6 +13,7 @@ pluginManagement {
 }
 rootProject.name = 'matcha'
 include(':spring-security-firebase-auth')
+include(':user-profile-app')
 include(':collection-app')
 include(':media-app')
 include(':review-app')
