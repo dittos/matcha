@@ -60,3 +60,19 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
+
+  # The zipkin process services the UI, and also exposes a POST endpoint that
+  # instrumentation can send trace data to.
+  zipkin:
+    image: openzipkin/zipkin-slim
+    container_name: zipkin
+    # Environment settings are defined here https://github.com/openzipkin/zipkin/blob/master/zipkin-server/README.md#environment-variables
+    environment:
+      - STORAGE_TYPE=mem
+      # Uncomment to enable self-tracing
+      # - SELF_TRACING_ENABLED=true
+      # Uncomment to enable debug logging
+      # - JAVA_OPTS=-Dorg.slf4j.simpleLogger.log.zipkin2=debug
+    ports:
+      # Port used for the Zipkin UI and HTTP Api
+      - 9411:9411

@@ -18,4 +18,6 @@ class ElasticsearchConfiguration : ElasticsearchConfigurationSupport() {
         entityMapper.setConversions(elasticsearchCustomConversions())
         return entityMapper
     }
+
+    // TODO: configure tracing when https://github.com/spring-projects/spring-data-elasticsearch/pull/363 released
 }
